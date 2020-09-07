@@ -9,10 +9,12 @@
   "private": true,
   "dependencies": {
     "dotenv": "^8.2.0",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "mongoose": "^5.10.3"
   },
   "devDependencies": {
     "@types/express": "^4.17.7",
+    "@types/mongoose": "^5.7.36",
     "@types/node": "^14.0.24",
     "nodemon": "^2.0.4",
     "ts-node": "^8.10.2",
