@@ -1,0 +1,81 @@
+<script>
+  const pathPrefix = "http://localhost:8081/"
+  const xhr = new XMLHttpRequest();
+
+
+  function getUser() {
+    const url = pathPrefix + "user/get/" + document.getElementById('userId').value;
+    xhr.open("GET", url);
+    xhr.send();
+    xhr.onreadystatechange = function () {
+      if (this.readyState == 4) {
+        addText(xhr.response);
+      }
+    }
+  }
+
+  function createUser() {
+    const url = pathPrefix + "user";
+    xhr.open('POST', url, true);
+    xhr.setRequestHeader('Content-type', 'application/json');
+    xhr.onload = function () {
+      addText(xhr.response);
+    }
+    const data = {
+      'firstName': document.getElementById('userFirstname').value,
+      'lastName': document.getElementById('userLastname').value
+    }
+    xhr.send(JSON.stringify(data));
+  }
+
+  function createOrder() {
+    const url = pathPrefix + "order";
+    xhr.open('POST', url, true);
+    xhr.setRequestHeader('Content-type', 'application/json');
+    xhr.onload = function () {
+      addText(xhr.response);
+    }
+    const data = {
+      'userId': document.getElementById('orderUserId').value,
+      'travelId': document.getElementById('orderTravelId').value
+    }
+    xhr.send(JSON.stringify(data));
+  }
+
+  function getTravels() {
+    const url = pathPrefix + "travel";
+    xhr.open("GET", url);
+    xhr.send();
+    xhr.onreadystatechange = function () {
+      if (this.readyState == 4) {
+        addText(xhr.response);
+      }
+    }
+  }
+
+  function addText(event) {
+    document.getElementById("alltext").value += event += "\n";
+  }
+</script>
+
+<br>
+<button id="getuser" onClick="getUser()">getUser</button>
+<input id="userId" />
+<br>
+<button id="createUser" onClick="createUser()">createUser</button>
+<label>LastName</label>
+<input id="userLastname" />
+<label>FirstName</label>
+<input id="userFirstname" />
+<br><br>
+<button id="createOrder" onClick="createOrder()">createOrder</button>
+<label>UserId</label>
+<input id="orderUserId" />
+<label>TravelId</label>
+<input id="orderTravelId" />
+<br>
+<button id="getTravels" onClick="getTravels()">getTravels</button>
+<br>
+<hr><br>
+
+<textarea id="alltext" style="position: absolute;bottom: 10px;width: 80%;height: 20%;" readonly="true"></textarea>

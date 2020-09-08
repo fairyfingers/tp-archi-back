@@ -1,21 +1,20 @@
 import 'typescript-rest';
 import { Path, POST, GET, PathParam } from 'typescript-rest';
 import { userService } from '../services/userService';
+import { IUser } from '../abstract/abstractUser';
 
 @Path('user')
 export class UserRest {
-
-  @Path('test')
+  @Path('')
   @POST
-  createUser() {
-    console.log(':/create')
-    //return userService.createUser();
+  createUser(user: IUser) {
+    return userService.createUser(user);
   }
 
-  @Path(':id')
+  @Path('get/:id')
   @GET
-  getUser(@PathParam('id') id: number) {
-    console.log('/:id')
-    //return userService.getUser(id);
+  getUser(@PathParam('id') id: string) {
+    console.log(':/id')
+    return userService.getUser(id);
   }
 }

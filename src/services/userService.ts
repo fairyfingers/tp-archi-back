@@ -1,20 +1,17 @@
-// import { morpionHandler } from "./morpionHandler";
+import { IUser } from '../abstract/abstractUser';
+import { createUser, getUser } from '../lib/schemas/user';
 
 class UserService {
   constructor() {
     console.log('UserService instantiated');
   }
 
-  public createGame() {
-    // return morpionHandler.createGame();
+  public getUser(id: string) {
+    return getUser(id);
   }
 
-  public play(gameId: number, player: string, x: number, y: number) {
-    // return morpionHandler.play(gameId, player, (y * 3 + x));
-  }
-
-  public getGrid(id: number) {
-    // return morpionHandler.getGrid(id);
+  public createUser(user: IUser) {
+    return createUser(user);
   }
 }
 

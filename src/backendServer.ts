@@ -5,7 +5,10 @@ import * as http from 'http'
 import { Server } from 'typescript-rest';
 import fs from 'fs';
 import { UserRest } from './rest/userRest';
+import { OrderRest } from './rest/orderRest';
+import { TravelRest } from './rest/travelRest';
 import { } from 'body-parser';
+import cors from 'cors';
 
 // load '.env' file
 dotenv.config({
@@ -23,6 +26,7 @@ class BackendServer {
     const bodyParser = require('body-parser');
     this.backendServer = new http.Server();
     this.app = express();
+    this.app.use(cors());
     this.app.use(function (req, res, next) {
       res.header("Access-Control-Allow-Origin", "*");
       res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
@@ -34,7 +38,7 @@ class BackendServer {
     }));
     this.app.use(bodyParser.json());
 
-    Server.buildServices(this.app, ...[UserRest]);
+    Server.buildServices(this.app, ...[UserRest, OrderRest, TravelRest]);
     this.mongoSetup();
   }
 
