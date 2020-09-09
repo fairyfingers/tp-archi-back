@@ -4,7 +4,7 @@ import mongoose from 'mongoose';
 import * as http from 'http'
 import { Server } from 'typescript-rest';
 import fs from 'fs';
-import { UserRest } from './rest/userRest';
+import { ClientRest } from './rest/clientRest';
 import { OrderRest } from './rest/orderRest';
 import { TravelRest } from './rest/travelRest';
 import { } from 'body-parser';
@@ -38,7 +38,7 @@ class BackendServer {
     }));
     this.app.use(bodyParser.json());
 
-    Server.buildServices(this.app, ...[UserRest, OrderRest, TravelRest]);
+    Server.buildServices(this.app, ...[ClientRest, OrderRest, TravelRest]);
     this.mongoSetup();
   }
 

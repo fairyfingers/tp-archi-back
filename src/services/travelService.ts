@@ -1,6 +1,6 @@
 import { getTravels, getLinks, getAirport } from '../lib/schemas/travel';
 import { ITravel } from '../abstract/abstractTravel';
-import { getNbTravelOrder } from '../lib/schemas/order';
+import { getNbTravelOrder, getNbLuggageStockFromOrder } from '../lib/schemas/order';
 
 class TravelService {
   constructor() {
@@ -30,6 +30,7 @@ class TravelService {
       }
 
       item.stock = item.stock - await getNbTravelOrder(item._id)
+      item.luggage_stock = item.luggage_stock - await getNbLuggageStockFromOrder(item._id)
 
       result.push(
         {
@@ -37,7 +38,9 @@ class TravelService {
           departure_time: item.departure_time,
           arrival_time: item.arrival_time,
           price: item.price,
-          stock: item.stock
+          stock: item.stock,
+          luggage_stock: item.luggage_stock,
+          luggage_price: item.luggage_price
         }
       );;
     }

@@ -5,7 +5,9 @@ export interface ITravel {
   departure_time: Date,
   arrival_time: Date,
   price: number,
-  stock: number
+  stock: number,
+  luggage_stock: number,
+  luggage_price: number
 }
 
 export interface ITravelReturn extends Document {
@@ -13,7 +15,9 @@ export interface ITravelReturn extends Document {
   departure_time: Date,
   arrival_time: Date,
   price: number,
-  stock: number
+  stock: number,
+  luggage_stock: number,
+  luggage_price: number
 }
 
 export interface IAirportLinkReturn extends Document {

@@ -1,11 +1,15 @@
 import { Document } from 'mongoose';
-
+import { ITravelers } from "./abstractTravelers"
 export interface IOrder {
-  userId: string,
-  travelId: string
+  clientId: string,
+  travelId: string,
+  travelers: ITravelers[],
+  amount: number
 }
 
 export interface IOrderReturn extends Document {
-  user: string,
-  travel: string
+  client: string,
+  travel: string,
+  travelers: string[],
+  amount: number
 }
