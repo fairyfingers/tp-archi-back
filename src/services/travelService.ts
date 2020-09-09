@@ -20,8 +20,8 @@ class TravelService {
       for (const l of res?.link) {
         const res = await getAirport(l);
 
-        console.log("middle", res.name)
-        airports.push(res.name)
+        console.log("middle", res.code)
+        airports.push(res.code)
 
       }
 
@@ -34,6 +34,7 @@ class TravelService {
 
       result.push(
         {
+          _id: item._id,
           air_plane_link: airports,
           departure_time: item.departure_time,
           arrival_time: item.arrival_time,

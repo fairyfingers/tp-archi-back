@@ -11,7 +11,7 @@ export const Travelers = mongoose.model<ITravelersReturn>('Travelers', Travelers
 
 export async function createTravelers(travelers: TravelersInterface) {
   console.log(travelers);
-  return await Travelers.create({ last_name: travelers.lastName, first_name: travelers.firstName, amount: travelers.amount, luggage: travelers.luggage });
+  return (await Travelers.create({ last_name: travelers.lastName, first_name: travelers.firstName, amount: travelers.amount, luggage: travelers.luggage }))._id;
 }
 
 export async function getTravelers(id: string) {

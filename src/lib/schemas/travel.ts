@@ -41,11 +41,11 @@ export async function getAirport(airportId: string) {
 // Airport.create({ code: 'DTW', name: 'Detroit' });
 // Airport.create({ code: 'CDG', name: 'Charles de Gaulle' });
 
-// AirplaneLink.create({ link: ['5f589eebd17d1d26644e5bde', '5f589eebd17d1d26644e5bdd', '5f589eebd17d1d26644e5bdca'] })
-// AirplaneLink.create({ link: ['5f589eebd17d1d26644e5bde', '5f589eebd17d1d26644e5bdca'] })
-// AirplaneLink.create({ link: ['5f589eebd17d1d26644e5bdd', '5f589eebd17d1d26644e5bdca'] })
+// AirplaneLink.create({ link: ['5f589eebd17d1d26644e5bde', '5f589eebd17d1d26644e5bdd', '5f589eebd17d1d26644e5bdc'] })
+// AirplaneLink.create({ link: ['5f589eebd17d1d26644e5bde', '5f589eebd17d1d26644e5bdc'] })
+// AirplaneLink.create({ link: ['5f589eebd17d1d26644e5bdd', '5f589eebd17d1d26644e5bdc'] })
 // AirplaneLink.create({ link: ['5f589eebd17d1d26644e5bde', '5f589eebd17d1d26644e5bdd'] })
-/*const cdg = Airport.findOne({ code: 'CDG' });
+/*const cdg = Airport.findOne({ code: 'CDG' });s
 const dtw = Airport.findOne({ code: 'DTW' });
 AirplaneLink.create({ link: [cdg, dtw] });
 AirplaneLink.create({ link: [dtw, cdg] });*/
