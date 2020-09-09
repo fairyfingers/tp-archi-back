@@ -5,6 +5,7 @@ import { IOrder } from '../abstract/abstractOrder';
 
 @Path('order')
 export class OrderRest {
+
   @Path('')
   @POST
   createOrder(order: IOrder) {

@@ -35,13 +35,13 @@ export async function getAirport(airportId: string) {
   return await Airport.findOne({ _id: airportId });
 }
 
-//Airport.create({ code: 'CDG', name: 'Charles de Gaules' });
+//Airport.create({ code: 'JFK', name: 'Aeroprot de New York' });
 //Airport.create({ code: 'DTW', name: 'Detroit' });
-//AirplaneLink.create({ link: ['5f5760d95f787c231c58ca89', '5f5760d95f787c231c58ca8a'] })
+//AirplaneLink.create({ link: ['5f5760d95f787c231c58ca89', '5f5760d95f787c231c58ca8a', '5f588c5fdc110b188cac761a'] })
 //AirplaneLink.create({ link: ['5f5760d95f787c231c58ca8a', '5f5760d95f787c231c58ca89'] })
 /*const cdg = Airport.findOne({ code: 'CDG' });
 const dtw = Airport.findOne({ code: 'DTW' });
 AirplaneLink.create({ link: [cdg, dtw] });
 AirplaneLink.create({ link: [dtw, cdg] });*/
 
-//Travel.create({ air_plane_link: '5f576146017f683444b9201f', departure_time: new Date('2020-02-03 13:09'), arrival_time: new Date('2020-02-03 19:46'), price: 700, stock: 81 })
+//Travel.create({ air_plane_link: '5f588ccf0dab2f0f28a881e1', departure_time: new Date('2020-02-03 13:09'), arrival_time: new Date('2020-02-03 19:46'), price: 1000, stock: 80 })

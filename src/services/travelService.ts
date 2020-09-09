@@ -1,5 +1,6 @@
 import { getTravels, getLinks, getAirport } from '../lib/schemas/travel';
-import { ITravel } from '../abstract/abstractTravel';;
+import { ITravel } from '../abstract/abstractTravel';
+import { getNbTravelOrder } from '../lib/schemas/order';
 
 class TravelService {
   constructor() {
@@ -23,6 +24,12 @@ class TravelService {
         airports.push(res.name)
 
       }
+
+      if (res?.link.length > 2) {
+        item.price = item.price * 0.90
+      }
+
+      item.stock = item.stock - await getNbTravelOrder(item._id)
 
       result.push(
         {

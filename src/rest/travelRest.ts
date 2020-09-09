@@ -6,7 +6,17 @@ import { travelService } from '../services/travelService';
 export class TravelRest {
   @Path('')
   @GET
-  async getTravel() {
+  async getTravels() {
     return await travelService.getTravels();
   }
+
+  // TODO get detail for one travel
+  @Path(':id')
+  @GET
+  async getTravel(travelId: string) {
+    return await travelService.getTravels();
+  }
+
+
+
 }

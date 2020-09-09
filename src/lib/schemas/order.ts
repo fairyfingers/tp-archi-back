@@ -18,6 +18,10 @@ export async function createOrder(order: IOrder) {
   })
 }
 
-/* const user = User.findOne({ first_name: 'tata' });
-const travel = Travel.findOne({ price: 700 });
-Order.create({ user: user, travel: travel }); */
+export async function getNbTravelOrder(travelId: string) {
+  return Order.count({ travel: travelId })
+}
+
+// const user = User.findOne({ first_name: 'tata' });
+// const travel = Travel.findOne({ price: 700 });
+//Order.create({ user: user, travel: travel }); 
