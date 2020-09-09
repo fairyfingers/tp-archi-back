@@ -6,8 +6,8 @@ class OrderService {
     console.log('OrderService instantiated');
   }
 
-  public createOrder(order: IOrder) {
-    return createOrder(order);
+  public async createOrder(order: IOrder) {
+    return await createOrder(order);
   }
 }
 

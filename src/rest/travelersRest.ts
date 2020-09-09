@@ -7,14 +7,14 @@ import { ITravelers } from '../abstract/abstractTravelers';
 export class ClientRest {
   @Path('')
   @POST
-  createTravelers(travelers: ITravelers) {
-    return travelersService.createTravelers(travelers);
+  async createTravelers(travelers: ITravelers) {
+    return await travelersService.createTravelers(travelers);
   }
 
   @Path('get/:id')
   @GET
-  getTravelers(@PathParam('id') id: string) {
+  async getTravelers(@PathParam('id') id: string) {
     console.log(':/id')
-    return travelersService.getTravelers(id);
+    return await travelersService.getTravelers(id);
   }
 }

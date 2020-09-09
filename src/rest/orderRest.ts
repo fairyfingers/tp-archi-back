@@ -8,7 +8,7 @@ export class OrderRest {
 
   @Path('')
   @POST
-  createOrder(order: IOrder) {
-    return orderService.createOrder(order);
+  async createOrder(order: IOrder) {
+    return await orderService.createOrder(order);
   }
 }

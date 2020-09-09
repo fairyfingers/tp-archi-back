@@ -6,12 +6,12 @@ class ClientService {
     console.log('ClientService instantiated');
   }
 
-  public getClient(id: string) {
-    return getClient(id);
+  public async getClient(id: string) {
+    return await getClient(id);
   }
 
-  public createClient(client: IClient) {
-    return createClient(client);
+  public async createClient(client: IClient) {
+    return await createClient(client);
   }
 }
 

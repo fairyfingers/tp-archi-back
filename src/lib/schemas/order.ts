@@ -31,7 +31,7 @@ export async function createOrder(order: IOrder) {
 }
 
 export async function getNbTravelOrder(travelId: string) {
-  return Order.count({ travel: travelId })
+  return await Order.count({ travel: travelId })
 }
 
 export async function getNbLuggageStockFromOrder(travelId: string) {

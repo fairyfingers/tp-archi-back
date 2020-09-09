@@ -7,14 +7,14 @@ import { IClient } from '../abstract/abstractClient';
 export class ClientRest {
   @Path('')
   @POST
-  createClient(client: IClient) {
-    return clientService.createClient(client);
+  async createClient(client: IClient) {
+    return await clientService.createClient(client);
   }
 
   @Path('get/:id')
   @GET
-  getClient(@PathParam('id') id: string) {
+  async getClient(@PathParam('id') id: string) {
     console.log(':/id')
-    return clientService.getClient(id);
+    return await clientService.getClient(id);
   }
 }

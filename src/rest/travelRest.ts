@@ -17,6 +17,4 @@ export class TravelRest {
     return await travelService.getTravels();
   }
 
-
-
 }

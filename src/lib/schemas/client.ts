@@ -9,11 +9,11 @@ export const Client = mongoose.model('Client', ClientSchema);
 
 export async function createClient(client: ClientInterface) {
   console.log(client);
-  return Client.create({ last_name: client.lastName, first_name: client.firstName });
+  return await Client.create({ last_name: client.lastName, first_name: client.firstName });
 }
 
 export async function getClient(id: string) {
-  return Client.findOne({ _id: id });
+  return await Client.findOne({ _id: id });
 }
 
 // Client.create({ last_name: 'toto', first_name: 'tata' });

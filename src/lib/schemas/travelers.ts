@@ -11,11 +11,11 @@ export const Travelers = mongoose.model<ITravelersReturn>('Travelers', Travelers
 
 export async function createTravelers(travelers: TravelersInterface) {
   console.log(travelers);
-  return Travelers.create({ last_name: travelers.lastName, first_name: travelers.firstName, amount: travelers.amount, luggage: travelers.luggage });
+  return await Travelers.create({ last_name: travelers.lastName, first_name: travelers.firstName, amount: travelers.amount, luggage: travelers.luggage });
 }
 
 export async function getTravelers(id: string) {
-  return Travelers.findOne({ _id: id });
+  return await Travelers.findOne({ _id: id });
 }
 
 // Travelers.create({ last_name: 'ben', first_name: 'jerry', amount: 1000, luggage: 0 });

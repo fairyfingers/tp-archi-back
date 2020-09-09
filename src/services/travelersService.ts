@@ -6,12 +6,12 @@ class TravelersService {
     console.log('ClientService instantiated');
   }
 
-  public getTravelers(id: string) {
-    return getTravelers(id);
+  public async getTravelers(id: string) {
+    return await getTravelers(id);
   }
 
-  public createTravelers(travelers: ITravelers) {
-    return createTravelers(travelers);
+  public async createTravelers(travelers: ITravelers) {
+    return await createTravelers(travelers);
   }
 }
 
