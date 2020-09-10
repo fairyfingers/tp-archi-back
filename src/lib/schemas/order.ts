@@ -31,7 +31,18 @@ export async function createOrder(order: IOrder) {
 }
 
 export async function getNbTravelOrder(travelId: string) {
-  return await Order.count({ travel: travelId })
+  // return await Order.count({ travel: travelId })
+  const allOrder = await Order.find({ travel: travelId })
+
+  let nbPassenger = 0
+
+  for (let i = 0; i < allOrder.length; i++) {
+    const currentOrder = allOrder[i];
+
+    nbPassenger += currentOrder.travelers.length
+  }
+
+  return nbPassenger
 }
 
 export async function getNbLuggageStockFromOrder(travelId: string) {
