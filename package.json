@@ -1,9 +1,13 @@
 {
   "version": "0.1.0",
   "name": "tp-archi-back",
+  "main": "dist/main.js",
+  "engines": {
+    "node": "10.x"
+  },
   "scripts": {
-    "start": "node dist/app.js",
-    "dev": "nodemon src/app.ts",
+    "start": "node dist/main.js",
+    "dev": "nodemon src/main.ts",
     "build": "tsc -p .",
     "compile": "tsc --p tsconfig.json",
     "server": "tsc --p tsconfig.json && node dist/main.js"

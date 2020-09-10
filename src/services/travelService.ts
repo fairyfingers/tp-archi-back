@@ -32,6 +32,10 @@ class TravelService {
       item.stock = item.stock - await getNbTravelOrder(item._id)
       item.luggage_stock = item.luggage_stock - await getNbLuggageStockFromOrder(item._id)
 
+      if (item.stock <= 10) {
+        item.price = item.price * 1.20
+      }
+
       result.push(
         {
           _id: item._id,
